@@ -1,0 +1,42 @@
+@media (min-width: 768px) and (max-width: 1280px) {
+
+
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .flex-container > div {
+      width: 50%;
+      margin: 5px;
+      line-height: 30px;
+    }
+
+    #logo {
+      width:90%;
+      margin-top: -10%;
+      margin-bottom: -10%;
+      margin-left: 50%;
+    }
+
+    section {
+      padding: 10px;
+      margin: 10px;
+        border: 5px #003A60 solid;
+      /* margin-bottom: -5px; */
+      margin-top: -5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
