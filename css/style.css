@@ -21,10 +21,6 @@ main, header, section, aside, footer {
 
 #logo {
   width:90%;
-  margin-top: -10%;
-  margin-bottom: -11%;
-  /* z-index: -1;
-  position: absolute; */
 }
 
 #dashboardtitle{
@@ -41,6 +37,11 @@ main {
 header {
   padding: 20px;
 }
+
+nav {
+  text-align: center;
+}
+
 
 h1 {
   font-weight: 200;
@@ -62,6 +63,19 @@ h4 {
   font-weight: 200;
   font-size: 90%;
 }
+
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  display:inline-block;
+  width: 100%
+}
+
 
 .content {
   background: #00538A;

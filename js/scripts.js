@@ -92,7 +92,7 @@ var data = [{
 }];
 
 var layout = {
-  width: 325,
+  // width: 325,
   height: 240,
   margin: {
     t: 25,

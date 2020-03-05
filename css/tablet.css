@@ -1,22 +1,16 @@
 @media (min-width: 768px) and (max-width: 1280px) {
 
 
-    .flex-container {
-      display: flex;
-      flex-wrap: nowrap;
-    }
-
     .flex-container > div {
-      width: 50%;
+      width: calc( ( 100vw / 2 ) - 10px ); /* - 10px want 5px margin bij elke yes??*/
       margin: 5px;
       line-height: 30px;
     }
 
     #logo {
-      width:90%;
-      margin-top: -10%;
-      margin-bottom: -10%;
-      margin-left: 50%;
+      width:80%;
+        margin-top: -6%;
+        margin-bottom: -8%;
     }
 
     section {
@@ -26,17 +20,5 @@
       /* margin-bottom: -5px; */
       margin-top: -5px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
