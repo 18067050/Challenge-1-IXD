@@ -73,7 +73,7 @@ h4 {
 
 .flex-container > div {
   display:inline-block;
-  width: 100%
+  width: 100%;
 }
 
 
@@ -84,9 +84,9 @@ h4 {
 section {
   padding: 10px;
   margin: 10px;
-  border: 5px #005288 solid;
+  border: 5px #003A60 solid;
   /* margin-bottom: -5px; */
-  margin-top: -5px;
+  margin-top: 3px;
 }
 
 #brandstof {
