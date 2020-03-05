@@ -177,18 +177,20 @@ function maakChart() {
 // --------------------------------------------------------------------
 // Eten
 
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load('current', {
+  'packages': ['corechart']
+});
 google.charts.setOnLoadCallback(etenChart);
 
 function etenChart() {
 
   var data = google.visualization.arrayToDataTable([
     ['Eten', 'Verdeling'],
-    ['Fruit',     11],
-    ['Groente',      2],
-    ['Rijst',  7],
+    ['Fruit', 11],
+    ['Groente', 2],
+    ['Rijst', 7],
     ['Snacks', 2],
-    ['Ontbijt',    2]
+    ['Ontbijt', 2]
   ]);
 
   var options = {
@@ -203,25 +205,86 @@ function etenChart() {
 // --------------------------------------------------------------------
 // G-Force
 
-google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(gforceChart);
+google.charts.load('current', {
+  'packages': ['corechart']
+});
+google.charts.setOnLoadCallback(gforceChart);
 
-      function gforceChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Seconds', 'Height', 'Speed'],
-          ['15',  1000,      400],
-          ['30',  1170,      460],
-          ['45',  660,       1120],
-          ['60',  1030,      540]
+function gforceChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Seconds', 'Height', 'Speed'],
+    ['15', 1000, 400],
+    ['30', 1170, 460],
+    ['45', 660, 1120],
+    ['60', 1030, 540]
+  ]);
+
+  var options = {
+    title: 'G-Force',
+    curveType: 'function',
+    legend: {
+      position: 'bottom'
+    }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('gforce_chart'));
+
+  chart.draw(data, options);
+}
+
+
+// --------------------------------------------------------------------
+// Height
+
+google.charts.load("current", {
+  packages: ['corechart']
+});
+google.charts.setOnLoadCallback(heightChart);
+
+function heightChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Rocket", "Height", {
+      role: "style"
+    }],
+    ["Space X", 70, "#003A60"]
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+    {
+      calc: "stringify",
+      sourceColumn: 1,
+      type: "string",
+      role: "annotation"
+    },
+    2
+  ]);
+
+  var options = {
+    title: "Hoogte van in meters",
+    legend: {
+      position: "none"
+    },
+  };
+  var chart = new google.visualization.ColumnChart(document.getElementById("height"));
+  chart.draw(view, options);
+}
+
+// --------------------------------------------------------------------
+// Price
+
+google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Space X');
+        data.addColumn('number', 'Price');
+        data.addRows([
+          ['Standard Payment Plan',  {v: 62000000, f: '$62M'}]
         ]);
 
-        var options = {
-          title: 'G-Force',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
+        var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        var chart = new google.visualization.LineChart(document.getElementById('gforce_chart'));
-
-        chart.draw(data, options);
+        table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
       }
